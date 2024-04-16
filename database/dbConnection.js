@@ -1,6 +1,5 @@
 const { MongoClient, ServerApiVersion } = require("mongodb");
-const uri =
-  "mongodb+srv://ransrath:Pasan.213580@deakin.7mcipan.mongodb.net/?retryWrites=true&w=majority&appName=Deakin";
+const uri = process.env.DATABASE_URL;
 
 const client = new MongoClient(uri, {
   serverApi: {
@@ -10,4 +9,17 @@ const client = new MongoClient(uri, {
   },
 });
 
-module.exports = { client };
+async function testDatabaseConnection() {
+  try {
+    await client.connect();
+  } finally {
+    console.log("You successfully connected to MongoDB!");
+  }
+  try {
+    await client.close();
+  } finally {
+    console.log("You successfully disconnected from MongoDB!");
+  }
+}
+
+module.exports = { client, testDatabaseConnection };
