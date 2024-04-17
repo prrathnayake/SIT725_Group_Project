@@ -15,7 +15,7 @@ async function register(username, email, password) {
 
 async function login(username, password) {
   const employee = await employeeCollection.findOne({ username });
-  console.log(employee);
+
   if (!employee) {
     return res.status(404).json({ message: "Employee not found" });
   }
