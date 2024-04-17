@@ -9,6 +9,9 @@ const client = new MongoClient(uri, {
   },
 });
 
+const database = client.db("Deakin");
+const employeeCollection = database.collection('Employees');
+
 async function testDatabaseConnection() {
   try {
     await client.connect();
@@ -22,4 +25,4 @@ async function testDatabaseConnection() {
   }
 }
 
-module.exports = { client, testDatabaseConnection };
+module.exports = { client, database, employeeCollection, testDatabaseConnection };
