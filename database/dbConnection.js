@@ -1,6 +1,7 @@
 const { MongoClient, ServerApiVersion } = require("mongodb");
 const uri = process.env.DATABASE_URL;
 
+// crate mongoDB client to access MongoDB Cluster
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -9,9 +10,11 @@ const client = new MongoClient(uri, {
   },
 });
 
+// create w+variables with all databases and collection to use in project
 const database = client.db("Deakin");
 const employeeCollection = database.collection('Employees');
 
+// function to test database connection
 async function testDatabaseConnection() {
   try {
     await client.connect();

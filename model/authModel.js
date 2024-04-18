@@ -4,6 +4,7 @@ const Employee = require("../model/employeeModel.js");
 
 const { employeeCollection } = require("../database/dbConnection.js");
 
+// user register function to register new users in to the system
 async function register(username, email, password) {
   const hashedPassword = await bcrypt.hash(password, 10);
   await employeeCollection.insertOne({
@@ -13,6 +14,7 @@ async function register(username, email, password) {
   });
 }
 
+// user login function to login and validate existing users in the system
 async function login(username, password) {
   const employee = await employeeCollection.findOne({ username });
 
