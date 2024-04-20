@@ -4,6 +4,7 @@ require("dotenv").config();
 const auth = require("./routes/authRoute.js");
 const index = require("./routes/indexRoute.js");
 const employee = require("./routes/employeeRoute.js");
+const login = require("./routes/loginRoute.js");
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -15,6 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/auth", auth);
 app.use("/", index);
 app.use("/employee", employee);
+app.use("/login", login);
 
 // start server
 app.listen(port, async () => {

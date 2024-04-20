@@ -7,7 +7,7 @@ router.get("/", authenticate, async function (req, res) {
     res.json({ message: `Welcome ${req.user.username}` });
 });
 
-router.post("/", function (req, res) {
+router.post("/", authenticate, function (req, res) {
 });
 
 module.exports = router;

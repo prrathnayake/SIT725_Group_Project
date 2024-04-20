@@ -3,6 +3,8 @@ const bcrypt = require("bcrypt");
 const Employee = require("../model/employeeModel.js");
 
 const { employeeCollection } = require("../database/dbConnection.js");
+const { setLocalStorage, getLocalStorage } = require("../utils/localStorage.js");
+const { LocalStorage_JWT_Token } = require("../utils/globalVariable.js");
 
 // user register function to register new users in to the system
 async function register(username, email, password) {
@@ -30,6 +32,7 @@ async function login(username, password) {
   const token = jwt.sign({ userId: employee._id }, process.env.SECRET_KEY, {
     expiresIn: "1 hour",
   });
+  await setLocalStorage(LocalStorage_JWT_Token, token);
   return token;
 }
 
