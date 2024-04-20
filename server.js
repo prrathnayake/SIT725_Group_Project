@@ -5,6 +5,7 @@ const auth = require("./routes/authRoute.js");
 const index = require("./routes/indexRoute.js");
 const employee = require("./routes/employeeRoute.js");
 const login = require("./routes/loginRoute.js");
+const register = require("./routes/registerRoute.js");
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -17,6 +18,7 @@ app.use("/auth", auth);
 app.use("/", index);
 app.use("/employee", employee);
 app.use("/login", login);
+app.use("/register", register);
 
 // start server
 app.listen(port, async () => {

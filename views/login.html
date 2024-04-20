@@ -16,14 +16,15 @@
                     <h4 className="title titleMainSides text-center mt-4">
                         Login into account
                     </h4>
-                    <form className="form-box px-3" onSubmit={loginSubmit}>
+                    <form className="form-box px-3" action="auth/login" method="POST">
+                      
                         <div className="form-input">
                             <span><i className="fa fa-envelope-open-text"></i></span>
-                            <input type="email" name="email" placeholder="Email Address" tabindex="10" required></input>
+                            <input type="email" name="email" placeholder="Email Address" tabindex="10" required>
                         </div>
                         <div className="form-input">
                             <span><i className="fa fa-key"></i></span>
-                            <input type="password" name="password" placeholder="Password" required></input>
+                            <input type="password" name="password" placeholder="Password" required>
                         </div>
                         <div className="mb-3 text-center mb-2">
                             <button type="submit" className="btn btn-block text-uppercase loginBtn">
@@ -31,7 +32,7 @@
                             </button>
                         </div>
                         <hr className="my-4">
-                        </hr>
+                        
 
                         <div className="text-center mb-2">
                             Don't have an account? {' '}
