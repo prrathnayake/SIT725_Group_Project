@@ -11,7 +11,8 @@ const authenticate = async (req, res, next) => {
   const token = await getLocalStorage(LocalStorage_JWT_Token);
 
   if (!token) {
-    return res.status(401).json({ message: "Authentication required" });
+    // return res.status(401).json({ message: "Authentication required" });
+    return res.redirect("/login");
   }
 
   try {
@@ -20,14 +21,16 @@ const authenticate = async (req, res, next) => {
       _id: new ObjectId(decodedToken.userId),
     });
     if (!employee) {
-      return res.status(404).json({ message: "Employee not found" });
+      // return res.status(404).json({ message: "Employee not found" });
+      return res.redirect("/login");
     }
 
     req.employee = employee;
     next();
   } catch (error) {
     console.log(error);
-    res.status(401).json({ message: "Invalid token" });
+    // res.status(401).json({ message: "Invalid token" });
+    return res.redirect("/login");
   }
 };
 

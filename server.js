@@ -6,6 +6,7 @@ const index = require("./routes/indexRoute.js");
 const employee = require("./routes/employeeRoute.js");
 const login = require("./routes/loginRoute.js");
 const register = require("./routes/registerRoute.js");
+const home = require("./routes/homeRoute.js");
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -19,6 +20,7 @@ app.use("/", index);
 app.use("/employee", employee);
 app.use("/login", login);
 app.use("/register", register);
+app.use("/home", home);
 
 // start server
 app.listen(port, async () => {
