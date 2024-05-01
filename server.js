@@ -1,6 +1,10 @@
 const express = require("express");
 require("dotenv").config();
 
+const http = require('http');
+const server = http.createServer(app);
+const io = require('socket.io')(server, { origins: '*:*'});
+
 const auth = require("./routes/authRoute.js");
 const index = require("./routes/indexRoute.js");
 const employee = require("./routes/employeeRoute.js");
@@ -22,7 +26,17 @@ app.use("/login", login);
 app.use("/register", register);
 app.use("/home", home);
 
+const liveCout = 0;
+
+io.on('connection', (socket) => {
+  liveCout++;
+  socket.on('disconnect', () => {
+      liveCout--;
+  });
+  console.log(liveCout);
+});
+
 // start server
-app.listen(port, async () => {
+server.listen(port, async () => {
   console.log(`Example app listening on port ${port}`);
 });
