@@ -1,6 +1,6 @@
 const express = require("express");
 require("dotenv").config();
-
+const app = express();
 const http = require('http');
 const server = http.createServer(app);
 const io = require('socket.io')(server, { origins: '*:*'});
@@ -12,7 +12,7 @@ const login = require("./routes/loginRoute.js");
 const register = require("./routes/registerRoute.js");
 const home = require("./routes/homeRoute.js");
 
-const app = express();
+
 const port = process.env.PORT || 4000;
 
 app.use(express.static(__dirname + "/"));
@@ -26,12 +26,12 @@ app.use("/login", login);
 app.use("/register", register);
 app.use("/home", home);
 
-const liveCout = 0;
+const liveCount = 0;
 
 io.on('connection', (socket) => {
-  liveCout++;
+  liveCount == liveCount + 1;
   socket.on('disconnect', () => {
-      liveCout--;
+      liveCount == liveCount  1;
   });
   console.log(liveCout);
 });

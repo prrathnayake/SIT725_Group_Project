@@ -30,7 +30,7 @@ async function login(username, password) {
   }
 
   const token = jwt.sign({ userId: employee._id }, process.env.SECRET_KEY, {
-    expiresIn: "1 hour",
+    expiresIn: "30s",
   });
   await setLocalStorage(LocalStorage_JWT_Token, token);
   return token;
