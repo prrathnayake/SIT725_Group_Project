@@ -3,8 +3,6 @@ const { ObjectId } = require("mongodb");
 const { employeeCollection } = require("../database/dbConnection.js");
 const { getLocalStorage } = require("../utils/localStorage.js");
 const { LocalStorage_JWT_Token } = require("../utils/globalVariable.js");
-{
-}
 
 // create a middleware function to authenticate the user with jwt token
 const authenticate = async (req, res, next) => {
@@ -22,6 +20,7 @@ const authenticate = async (req, res, next) => {
   }
 };
 
+// validating jwt token
 async function validateToken() {
   let valideToken = false;
   try {

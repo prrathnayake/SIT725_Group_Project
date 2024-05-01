@@ -10,7 +10,7 @@ const client = new MongoClient(uri, {
   },
 });
 
-// create w+variables with all databases and collection to use in project
+// create variables with all databases and collection to use in project
 const database = client.db("Deakin");
 const employeeCollection = database.collection('Employees');
 
