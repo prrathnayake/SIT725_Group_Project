@@ -31,7 +31,7 @@ const liveCount = 0;
 io.on('connection', (socket) => {
   liveCount == liveCount + 1;
   socket.on('disconnect', () => {
-      liveCount == liveCount  1;
+      liveCount == liveCount - 1;
   });
   console.log(liveCout);
 });
