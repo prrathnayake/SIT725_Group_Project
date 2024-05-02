@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Payroll Management</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" 
+        crossorigin="anonymous">
+  </head>
+  <body>
+    <h1 class="text-center">Add New Payroll</h1><br>
+    <div class="container">
+       <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body">
+                <form id="payrollForm" method="POST" action="">
+                    <div class="mb-3">
+                        <label for="id">Payroll Id</label>
+                        <input name="id" id="id" type="text" class="form-control" placeholder="Enter Payroll Id"/>
+                    </div>
+                    <div class="mb-3">
+                        <label for="department">Department</label>
+                        <select name="department" id="department" class="form-control">
+                            <option selected>Please select department</option>
+                            <option value="1">IT</option>
+                            <option value="2">HR</option>
+                            <option value="3">Customer Service</option>
+                        </select>
+                    </div>
+                    <div class="mb-3 ">
+                        <label for="employeeName">Employee Name</label>
+                        <select name="employeeName" id="employeeName" class="form-control">
+                            <option selected>Please select employee name</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="basicSalary">Basic Salary</label>
+                        <input name="basicSalary" id="basicSalary" type="number" class="form-control" placeholder="Enter basic salary"/>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="allowanceType">Allowance Type</label>
+                            <select name="allowanceType" id="allowanceType" class="form-control">
+                                <option selected>Please select allowance type</option>
+                                <option value="1">Internet Allowance</option>
+                                <option value="2">Petrol Allowance </option>
+                                <option value="3">Other Allowance </option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="allowanceAmount">Allowance Amount</label>
+                            <input
+                                name="allowanceAmount"
+                                id="allowanceAmount"
+                                type="number"
+                                class="form-control"
+                                placeholder="Enter Allowance Amount"
+                            />
+                        </div>
+                    </div>
+                    
+                    <div class="container text-right">
+                        <button type="button" class="btn btn-secondary" id="addAllowanceBtn">
+                            Add Allowance
+                        </button>
+                        <div class="mb-3">
+                            <table class="table table-striped" id="allowancesTable">
+                                <thead>
+                                    <tr>
+                                        <th>Allowance Type</th>
+                                        <th>Allowance Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="container text-center">
+                        <button id="addPayrollBtn" class="btn btn-success">
+                            Add Payroll
+                        </button>
+                        <button id="clearBtn" class="btn btn-warning">
+                            Clear
+                        </button>
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
+    <script src="../js/payroll.js"></script>   
+</body>
+</html>
