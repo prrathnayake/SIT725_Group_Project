@@ -17,29 +17,29 @@ export function connectSocketIo() {
   }
 
   // Handle messages specific to the admin room
-  socket.on("admin-room", (message) => {
+  socket.on("admin-room", (data) => {
     new Noty({
       type: "info",
-      text: message.data.empId + " has been updated",
+      text: data.message,
       timeout: 5000,
       layout: "bottomRight",
     }).show();
   });
 
   // Handle messages specific to the employee room
-  socket.on("employee-room", (message) => {
+  socket.on("employee-room", (data) => {
     new Noty({
       type: "info",
-      text: message.data.empId + " has been updated",
+      text: data.message,
       timeout: 5000,
       layout: "bottomRight",
     }).show();
   });
 
-  socket.on("message", (message) => {
+  socket.on("message", (data) => {
     new Noty({
       type: "info",
-      text: message.data.empId + " has been updated",
+      text: data.message,
       timeout: 5000,
       layout: "bottomRight",
     }).show();

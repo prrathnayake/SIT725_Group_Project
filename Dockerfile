@@ -13,6 +13,7 @@ RUN git clone https://github.com/prrathnayake/SIT725_Group_Project.git && cd SIT
 ENV DATABASE_URL="your_mongoDB_URL"
 ENV PORT=port
 ENV SECRET_KEY="yoursecretkey"
+ENV RABBITMQ_URL="amqp://host.docker.internal:5672"
 
 EXPOSE $port
 

@@ -3,6 +3,8 @@ require("dotenv").config();
 const app = express();
 const http = require("http");
 const { setupSocketIoServer } = require('./middleware/websocket-server/socketServer.js');
+const { connectToRabbitMQ } = require('./middleware/websocket-server/rabbitmqProducer.js');
+require("./middleware/websocket-server/rabbitmqConsumer.js");
 const server = http.createServer(app);
 
 const auth = require("./routes/authRoute.js");

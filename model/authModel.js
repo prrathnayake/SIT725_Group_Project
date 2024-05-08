@@ -30,10 +30,10 @@ async function login(username, password) {
   }
 
   const userPrincipal = {
-    userId: employee._id, // Assuming '_id' is the unique identifier for the employee
+    userId: employee._id,
     username: employee.username,
     empId: employee.empId,
-    userRole: employee.userRole // Assuming 'userRole' is a property in the employee object
+    userRole: employee.userRole
   };
 
   // Sign the JWT token with the payload
