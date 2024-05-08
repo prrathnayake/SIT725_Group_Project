@@ -7,7 +7,8 @@ const { LocalStorage_JWT_Token } = require("../utils/globalVariable.js");
 // create a middleware function to authenticate the user with jwt token
 const authenticate = async (req, res, next) => {
   try {
-    const valideToken = await validateToken();
+    const token = await getLocalStorage(LocalStorage_JWT_Token);
+    const valideToken = await validateToken(token);
     if (!valideToken) {
       // return res.status(404).json({ message: "Employee not found" });c
       return res.redirect("/login");
@@ -21,24 +22,48 @@ const authenticate = async (req, res, next) => {
 };
 
 // validating jwt token
-async function validateToken() {
-  let valideToken = false;
+async function validateToken(token) {
+  let validToken = false;
   try {
-    const token = await getLocalStorage(LocalStorage_JWT_Token);
-
     if (!token) {
-      return valideToken;
+      return validToken;
     }
     const decodedToken = jwt.verify(token, process.env.SECRET_KEY);
     const employee = await employeeCollection.findOne({
       _id: new ObjectId(decodedToken.userId),
     });
-    valideToken = true;
-    return valideToken;
+    validToken = true;
+    return validToken;
   } catch (error) {
-    valideToken = false;
-    return valideToken;
+    validToken = false;
+    return validToken;
   }
 }
 
-module.exports = { authenticate, validateToken };
+function extractUserFromToken(token) {
+  try {
+    // Decode the JWT token to access its payload
+    const decodedToken = jwt.decode(token);
+
+    // Retrieve user information from the token's payload
+    const userId = decodedToken.userId;
+    const username = decodedToken.username;
+    const empId = decodedToken.empId;
+    const userRole = decodedToken.userRole;
+
+    // Construct the user object
+    const userPrincipal = {
+      userId,
+      username,
+      empId,
+      userRole,
+    };
+
+    return userPrincipal;
+  } catch (error) {
+    console.error("Error extracting user from token:", error);
+    return null;
+  }
+}
+
+module.exports = { authenticate, validateToken, extractUserFromToken };

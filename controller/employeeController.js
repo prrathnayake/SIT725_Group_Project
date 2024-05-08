@@ -1,4 +1,4 @@
-const EmployeeService = require("../service/employeeservice");
+const EmployeeService = require("../model/service/employeeservice");
 const Employee = require("../model/employeeModel");
 
 

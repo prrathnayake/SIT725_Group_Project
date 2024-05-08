@@ -1,5 +1,5 @@
-const { employeeCollection } = require("../database/dbConnection.js");
-const Employee = require('../model/employeeModel.js');
+const { employeeCollection } = require("../../database/dbConnection.js");
+const Employee = require('../../model/employeeModel.js');
 
 // update the employee data
 async function updateEmployee(employee) {
@@ -17,7 +17,12 @@ async function updateEmployee(employee) {
 
         // Update the employee 
         const result = await employeeCollection.updateOne({ empId: employee.empId }, { $set: updatedEmployee });
-
+        const message = {
+            type: 'employee_updated',
+            message: 'Hi Employee no: ' + updatedEmployee.empId + ' details has been updated'
+        };
+        // Send the message to all connected clients
+        emitMessageToAdmins(message);
         // Return the ID of the updated employee
         return result.modifiedCount;
     } catch (error) {
