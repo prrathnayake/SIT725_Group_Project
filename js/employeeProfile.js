@@ -1,3 +1,6 @@
+import { connectSocketIo } from "./clientSocket.js";
+connectSocketIo();
+
 async function fetchEmployeeDetails() {
     try {
         const urlParams = new URLSearchParams(window.location.search);
