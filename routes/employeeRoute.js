@@ -21,6 +21,4 @@ router.put("/add", authenticate, addEmployee);
 
 router.put("/update", authenticate, updateEmployee);
 
-router.put("/update", authenticate, updateEmployee);
-
 module.exports = router;
