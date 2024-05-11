@@ -6,7 +6,7 @@ async function fetchEmployeeDetails() {
         const urlParams = new URLSearchParams(window.location.search);
         const empId = urlParams.get('empId');
         if (empId) {
-            const url = `/employee?empId=${empId}`;
+            const url = `/employee/id?empId=${empId}`;
             const response = await fetch(url, {
                 method: "GET",
                 headers: {
@@ -61,7 +61,7 @@ document.getElementById("profileForm").addEventListener("submit", async function
 
 
     try {
-        const response = await fetch("/employee", {
+        const response = await fetch("/employee/update", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
