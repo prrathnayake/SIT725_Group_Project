@@ -31,6 +31,54 @@ async function updateEmployee(employee) {
     }
 }
 
+async function addEmployee(newEmployee) {
+    try {
+        // Check if the employee already exists
+        const existingEmployee = await employeeCollection.findOne({ empId: newEmployee.empId });
+
+        // If the employee already exists, throw an error
+        if (existingEmployee) {
+            throw new Error("Employee with the same ID already exists");
+        }
+
+        // Insert the new employee into the collection
+        const result = await employeeCollection.insertOne(newEmployee);
+
+        // Return the ID of the newly added employee
+        return result.insertedId;
+    } catch (error) {
+        console.error("Failed to add employee:", error);
+        throw error;
+    }
+}
+
+async function getEmployeeById(empId) {
+    try {
+        const employee = await employeeCollection.findOne({ empId: empId });
+        if (employee) {
+            return employee;
+        } else {
+            throw Error("No employee with the Id: " + empId);
+        }
+    } catch (error) {
+        throw error;
+    }
+}
+
+async function getAllEmployees() {
+    try {
+        const employees = await employeeCollection.find({});
+        if (employees.length > 0) {
+            return employees;
+        } else {
+            throw Error("No employees found.");
+        }
+    } catch (error) {
+        throw error;
+    }
+}
+
+
 // retreive the employee by Id
 async function getEmployeeById(empId) {
     try {
@@ -45,4 +93,4 @@ async function getEmployeeById(empId) {
     }
 }
 
-module.exports = { updateEmployee, getEmployeeById };
+module.exports = { getAllEmployees, addEmployee, updateEmployee, getEmployeeById };
