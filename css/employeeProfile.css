@@ -1,38 +1,51 @@
-body {
-    margin: 0;
-    color: #333;
-    background: #f8f9fa;
-    font-family: "Open Sans", sans-serif;
-    font-weight: 600;
-    font-size: 16px;
-}
-
-.container {
-    padding: 50px 0;
-}
-
-.card {
-    background: #fff;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-.card-body {
-    padding: 30px;
-}
-
-.form-control:focus {
-    border-color: #66afe9;
-    box-shadow: none;
-}
-
-.btn-edit {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-}
-
-.btn-save {
+/* Styles for employee details page */
+/* Form background */
+form {
+    background-color: #0a2558;
+    padding: 20px; /* Optional: Add padding for better spacing */
+  }
+  
+  /* Body */
+  body {
+    background-color: #0a2558;
+    color: white;
+  }
+  
+  /* Card */
+  .card {
+    margin-top: 50px;
+  }
+  
+  /* Form labels */
+  .form-label {
+    color: black;
+  }
+  
+  /* Form inputs */
+  .form-control {
+    background-color: #0a2558;
+    color: black;
+    border-color: black;
+  }
+  
+  /* Form buttons */
+  .btn {
+    background-color: #00ABB3;
+    color: white;
+    border-color: #00ABB3;
+  }
+  
+  .btn:hover {
+    background-color: #00707C;
+    border-color: #00707C;
+  }
+  
+  /* Form button container */
+  .container.text-center {
     margin-top: 20px;
-}
+  }
+  /* Button background */
+  button.btn {
+    background-color: black;
+    color: white; /* Set text color to white for better visibility */
+  }
