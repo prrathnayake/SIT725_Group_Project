@@ -1,0 +1,75 @@
+/* login.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #0d3073;
+}
+
+.container-fluid {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.title {
+    color: #0d3073;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-box {
+    width: 100%;
+}
+
+.form-input {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.form-input input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.form-input input:focus {
+    border-color: #0d3073;
+}
+
+.btn {
+    background-color: #0d3073;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0a2558;
+}
+
+.register-link {
+    color: #0d3073;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,22 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    background-color: #ffffff;
+}
+
+.form-control {
+    background-color: #ffffff;
+    border-color: #ced4da;
+}
+
+.btn-primary {
+    background-color: #0d3073;
+    border-color: #0d3073;
+}
+
+.btn-primary:hover {
+    background-color: #0a2558;
+    border-color: #0a2558;
+}
