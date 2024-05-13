@@ -1,14 +1,21 @@
 const path = require('path');
+require("dotenv").config();
 const express = require('express');
 const { MongoClient } = require('mongodb');
 const bodyParser = require('body-parser'); 
 const app = express();
 const mongoose = require('mongoose');
 const payrollRoute = require('./routes/payrollRoute.js');
+const { setupSocketIoServer } = require('./middleware/websocket-server/socketServer.js');
+const { connectToRabbitMQ } = require('./middleware/websocket-server/rabbitmqProducer.js');
+require("./middleware/websocket-server/rabbitmqConsumer.js");
 //const { testDatabaseConnection, client } = require('./database/db.js')
 const { connection } = require('./database/db.js');
 const empTaskRoute = require('./routes/empTaskRoute.js');
+const server = http.createServer(app);
 
+// Setup Socket.IO server
+setupSocketIoServer(server);
 
 app.use(bodyParser.json());
 
@@ -84,6 +91,10 @@ app.get('/api/employees', async (req, res) => {
 // }
 
 const PORT = process.env.PORT || 3000;
+
+
+
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
