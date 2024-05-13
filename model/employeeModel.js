@@ -1,5 +1,5 @@
 class Employee {
-    constructor(empId, firstName, lastName, dateOfBirth, address, phone, designation, department, status ) {
+    constructor(empId, firstName, lastName, dateOfBirth, address, phone, designation, department, status, userRole ) {
         this.empId = empId;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -9,6 +9,7 @@ class Employee {
         this.designation = designation;
         this.department = department;
         this.status = status;
+        this.userRole = userRole;
     }
 }
 

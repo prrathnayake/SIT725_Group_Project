@@ -29,9 +29,16 @@ async function login(username, password) {
     return res.status(401).json({ message: "Incorrect password" });
   }
 
-  const token = jwt.sign({ userId: employee._id }, process.env.SECRET_KEY, {
-    expiresIn: "30s",
-  });
+  const userPrincipal = {
+    userId: employee._id,
+    username: employee.username,
+    empId: employee.empId,
+    userRole: employee.userRole
+  };
+
+  // Sign the JWT token with the payload
+  const token = jwt.sign(userPrincipal, process.env.SECRET_KEY, { expiresIn: "170000s" });
+
   await setLocalStorage(LocalStorage_JWT_Token, token);
   return token;
 }
