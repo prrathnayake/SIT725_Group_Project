@@ -1,22 +1,7 @@
 const mongoose = require('mongoose');
 
-const allowanceDetails = new mongoose.Schema({
-    allowanceType: {
-      type: String,
-      required: true
-    },
-    allowanceAmount: {
-      type: Number,
-      required: true
-    }
-});
-
 const payrollDetails = new mongoose.Schema({
     id: {
-        type: String,
-        required: true
-    },
-    department: {
         type: String,
         required: true
     },
@@ -24,15 +9,20 @@ const payrollDetails = new mongoose.Schema({
         type: String,
         required: true
     },
+    month: {
+        type: String,
+        required: true
+    },
     basicSalary: {
         type: Number,
         required: true
     },
-    allowances: [allowanceDetails],
-    totAllowance: {
+    allowance: {
         type: Number,
-        default:0
+        required: true
     }
 });
 
-module.exports = mongoose.model('Payroll', payrollDetails);
+const Payroll = mongoose.model('Payroll', payrollDetails);
+
+module.exports = Payroll;
