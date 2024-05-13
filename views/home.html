@@ -9,9 +9,9 @@
     
     <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
 <body>
   <div class="sidebar">
     <div class="logo-details">
@@ -46,7 +46,13 @@
         <li>
           <a href="/views/viewtable.html">
             <i class='bx bx-coin-stack' ></i>
-            <span class="links_name">View employee</span>
+            <span class="links_name">view employee</span>
+          </a>
+        </li>
+        <li>
+          <a href="/views/employeeprofile.html">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Employee Profile</span>
           </a>
         </li>
         <li>
@@ -124,7 +130,7 @@
       </div>
     </div>
   </section>
-
+  <script src="/socket.io/socket.io.js"></script>
   <script>
    let sidebar = document.querySelector(".sidebar");
 let sidebarBtn = document.querySelector(".sidebarBtn");
@@ -136,6 +142,7 @@ sidebarBtn.onclick = function() {
   sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
 }
  </script>
-
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+<script src="../js/home.js" type="module"></script>
 </body>
 </html>

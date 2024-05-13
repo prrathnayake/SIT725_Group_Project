@@ -39,7 +39,7 @@ function assignUserToRooms(socket) {
     console.log(`Socket ${socket.id} joined room: employee-room`);
   } else {
     console.error(
-      `Socket ${socket.id} attempted to join invalid room: ${roomName}`
+      `Socket ${socket.id} attempted to join invalid room}`
     );
   }
 }

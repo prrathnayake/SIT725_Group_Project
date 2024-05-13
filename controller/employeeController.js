@@ -3,11 +3,11 @@ const Employee = require("../model/employeeModel");
 
 
 const updateEmployee = async (req, res) => {
-    const { empId, firstName, lastName, dateOfBirth, address, phone, designation, status, department } = req.body;
+    const { empId, firstName, lastName, dateOfBirth, address, phone, designation, status, department, userRole } = req.body;
 
     try {
         const upsertedId = await EmployeeService.updateEmployee(
-            new Employee(empId, firstName, lastName, dateOfBirth, address, phone, designation, department, status)
+            new Employee(empId, firstName, lastName, dateOfBirth, address, phone, designation, department, status, userRole)
         );
 
         if (upsertedId) {
@@ -21,11 +21,11 @@ const updateEmployee = async (req, res) => {
 };
 
 const addEmployee = async (req, res) => {
-    const { empId, firstName, lastName, dateOfBirth, address, phone, designation, status, department } = req.body;
+    const { empId, firstName, lastName, dateOfBirth, address, phone, designation, status, department, userRole } = req.body;
 
     try {
         const insertedId = await EmployeeService.addEmployee(
-            new Employee(empId, firstName, lastName, dateOfBirth, address, phone, designation, department, status)
+            new Employee(empId, firstName, lastName, dateOfBirth, address, phone, designation, department, status, userRole)
         );
 
         if (insertedId) {

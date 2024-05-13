@@ -6,8 +6,6 @@ let {
   updateEmployee,
   getEmployees,
   addEmployee,
-  getEmployeeById,
-  updateEmployee,
 } = require("../controller/employeeController.js");
 const { authenticate } = require("../middleware/auth.js");
 
@@ -15,7 +13,7 @@ router.get("/", authenticate, getEmployees);
 
 router.get("/id", authenticate, getEmployeeById);
 
-router.get("/employee-profile", authenticate, function (req, res) {
+router.get("/employee-profile", function (req, res) {
     res.sendFile(path.join(__dirname, `../views/employeeProfile.html`));
 });
 

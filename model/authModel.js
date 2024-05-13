@@ -40,7 +40,7 @@ async function login(username, password) {
   const token = jwt.sign(userPrincipal, process.env.SECRET_KEY, { expiresIn: "170000s" });
 
   await setLocalStorage(LocalStorage_JWT_Token, token);
-  return token;
+  return { token, userPrincipal };
 }
 
 module.exports = { register, login };
