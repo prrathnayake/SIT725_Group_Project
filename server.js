@@ -3,7 +3,6 @@ require("dotenv").config();
 const app = express();
 const http = require("http");
 const { setupSocketIoServer } = require('./middleware/websocket-server/socketServer.js');
-const { connectToRabbitMQ } = require('./middleware/websocket-server/rabbitmqProducer.js');
 require("./middleware/websocket-server/rabbitmqConsumer.js");
 const server = http.createServer(app);
 
@@ -16,8 +15,7 @@ const home = require("./routes/homeRoute.js");
 
 const port = process.env.PORT || 4000;
 
-// Setup Socket.IO server
-setupSocketIoServer(server);
+setupSocketIoServer();
 
 app.use(express.static(__dirname + "/"));
 app.use(express.json());

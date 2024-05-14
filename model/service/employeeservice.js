@@ -1,6 +1,6 @@
 const { employeeCollection } = require("../../database/dbConnection.js");
 const Employee = require('../../model/employeeModel.js');
-const {sendMessageToQueue} = require("../../middleware/websocket-server/rabbitmqProducer.js")
+const {emitMessageToAdminRoom} = require("../../middleware/websocket-server/emmiter.js")
 
 // update the employee data
 async function updateEmployee(employee) {
@@ -23,7 +23,7 @@ async function updateEmployee(employee) {
             message: 'Employee ID: ' + updatedEmployee.empId + ' details has been updated'
         };
         // Send the message to all connected clients
-        sendMessageToQueue('adminQueue',message);
+        emitMessageToAdminRoom(message);
         // Return the ID of the updated employee
         return result.modifiedCount;
     } catch (error) {
