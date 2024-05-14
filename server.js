@@ -15,7 +15,7 @@ const home = require("./routes/homeRoute.js");
 
 const port = process.env.PORT || 4000;
 
-setupSocketIoServer();
+setupSocketIoServer(server);
 
 app.use(express.static(__dirname + "/"));
 app.use(express.json());

@@ -27,7 +27,7 @@ function connectionInterceptor(io) {
     };
     assignUserToRooms(socket);
     next();
-  });
+    });
 }
 
 function assignUserToRooms(socket) {
