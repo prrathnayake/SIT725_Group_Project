@@ -22,7 +22,7 @@ async function getEmployeeNames() {
             const option = document.createElement('option');
             console.log(employee['empName']);
             option.text = employee.empName;
-            //option.value = employee._id;
+            option.value = employee.userId;
             dropdown.appendChild(option);
         });
 

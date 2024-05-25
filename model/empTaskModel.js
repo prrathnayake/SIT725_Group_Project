@@ -9,7 +9,12 @@ const taskDetails = new mongoose.Schema({
         type: String,
         required: true
     },
-    assignedTo: {
+    employeeName: {
+        type: String,
+        required: true
+    }
+    ,
+    assignedDate: {
         type: String,
         required: true
     },
@@ -17,11 +22,7 @@ const taskDetails = new mongoose.Schema({
         type: String,
         required: true
     },
-    deadline: {
-        type: String,
-        required: true
-    },
-    assignedDate: {
+    endDate: {
         type: String,
         required: true
     }

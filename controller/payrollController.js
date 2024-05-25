@@ -1,4 +1,4 @@
-const payrollService = require('../service/payrollService');
+const payrollService = require('../model/service/payrollService');
 
 //Get payroll data for selected id
 async function getPayrollById(req, res) {
