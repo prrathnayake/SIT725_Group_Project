@@ -16,13 +16,13 @@ document.addEventListener('DOMContentLoaded', async function () {
                 row.innerHTML = `
                     <td>${task.id}</td>
                     <td>${task.title}</td>
-                    <td>${task.assignedTo}</td>
+                    <td>${task.employeeName}</td>
                     <td>${task.assignedDate}</td>
                     <td>${task.status}</td>
-                    <td>${task.deadline}</td>
+                    <td>${task.endDate}</td>
                     <td>
                         <button class="btn btn-danger delete-btn" data-id="${task._id}">Delete</button>
-                        <a href="updatePayroll.html?id=${task._id}" class="btn btn-secondary">Update</a>
+                        <a href="/updateEmpTask?id=${task._id}" class="btn btn-secondary">Edit</a>
                     </td>
                 `;
                 taskTable.appendChild(row);
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 const deleteBtn = row.querySelector('.delete-btn');
                 deleteBtn.addEventListener('click', async function () {
                     const taskId = this.dataset.id;
-                    await deletePayrollRecord(taskId, row);
+                    await deleteTaskRecord(taskId, row);
                 });
             });
         } else {
@@ -41,3 +41,21 @@ document.addEventListener('DOMContentLoaded', async function () {
         alert('An unexpected error occurred.');
     }
 });
+
+//Delete payroll
+async function deleteTaskRecord(taskId, row) {
+    try {
+        const deleteResponse = await fetch(`/tasks/delete-empTask/${taskId}`, {
+            method: 'POST'
+        });
+        if (deleteResponse.ok) {
+            row.remove();
+            alert('Task record deleted successfully!');
+        } else {
+            alert('Failed to delete Task record.');
+        }
+    } catch (error) {
+        console.error('Error deleting Task:', error);
+        alert('An unexpected error occurred.');
+    }
+}
