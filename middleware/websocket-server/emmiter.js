@@ -47,6 +47,7 @@ function emitMessageToEmployeeRoom(data) {
 module.exports = {
   setIo,
   emitMessage,
+  emitMessagebyEmployeeId,
   emitMessageToAdmins,
   emitMessageToAdminRoom,
   emitMessageToEmployeeRoom,
