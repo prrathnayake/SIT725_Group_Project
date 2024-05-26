@@ -5,7 +5,6 @@ const http = require("http");
 const { MongoClient } = require('mongodb');
 const bodyParser = require('body-parser'); 
 const app = express();
-const http = require("http");
 const { setupSocketIoServer } = require('./middleware/websocket-server/socketServer.js');
 require("./middleware/websocket-server/rabbitmqConsumer.js");
 const server = http.createServer(app);
