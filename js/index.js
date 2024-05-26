@@ -44,6 +44,7 @@ function initializeSidebar() {
       document.getElementById("view-employee-payroll-link").style.display = "block";
       document.getElementById("employee-profile-link").style.display = "block";
       document.getElementById("view-task-employee-link").style.display = "block";
+      document.getElementById("settings-link").style.display = "block";
     }
   }
 
