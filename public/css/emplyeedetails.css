@@ -1,0 +1,57 @@
+/* Form background */
+form {
+  background-color: #0a2558;
+  padding: 20px; /* Optional: Add padding for better spacing */
+}
+
+/* Body */
+body {
+  background-color: #0a2558;
+  color: white;
+}
+
+/* Card */
+.card {
+  margin-top: 50px;
+}
+
+/* Form labels */
+.form-label {
+  color: white;
+}
+
+/* Form inputs */
+.form-control {
+  background-color: #0a2558;
+  color: white;
+  border-color: white;
+}
+
+/* Form buttons */
+.btn {
+  background-color: #00abb3;
+  color: white;
+  border-color: #00abb3;
+}
+
+.btn:hover {
+  background-color: #00707c;
+  border-color: #00707c;
+}
+
+/* Form button container */
+.container.text-center {
+  margin-top: 20px;
+}
+/* Button background */
+button.btn {
+  background-color: black;
+  color: white; /* Set text color to white for better visibility */
+}
+
+body {
+  margin: 0;
+  color: #6a6f8c;
+  background: #c8c8c8;
+  font: 600 16px/18px "Open Sans", sans-serif;
+}
