@@ -23,69 +23,7 @@
   </head>
 
   <body>
-    <div class="sidebar">
-      <div class="logo-details">
-        <i class="bx bxl-c-plus-plus"></i>
-        <span class="logo_name">Employee</span>
-      </div>
-      <ul class="nav-links">
-        <li>
-          <a href="#" class="active">
-            <i class="bx bx-grid-alt"></i>
-            <span class="links_name">Dashboard</span>
-          </a>
-        </li>
-        <li>
-          <a href="/views/employeeprofile.html">
-            <i class="bx bx-box"></i>
-            <span class="links_name">Employee profile</span>
-          </a>
-        </li>
-        <li>
-          <a href="/views/employeedetails.html">
-            <i class="bx bx-list-ul"></i>
-            <span class="links_name">Add employeet</span>
-          </a>
-        </li>
-        <li>
-          <a href="/views/updateemployee.html">
-            <i class="bx bx-pie-chart-alt-2"></i>
-            <span class="links_name">Update Employee</span>
-          </a>
-        </li>
-        <li>
-          <a href="/views/viewtable.html">
-            <i class="bx bx-coin-stack"></i>
-            <span class="links_name">view employee</span>
-          </a>
-        </li>
-        <li>
-          <a href="/views/employeeprofile.html">
-            <i class="bx bx-coin-stack"></i>
-            <span class="links_name">Employee Profile</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="bx bx-book-alt"></i>
-            <span class="links_name">Report</span>
-          </a>
-        </li>
-
-        <li>
-          <a href="#">
-            <i class="bx bx-cog"></i>
-            <span class="links_name">Setting</span>
-          </a>
-        </li>
-        <li class="log_out">
-          <a href="#">
-            <i class="bx bx-log-out"></i>
-            <span class="links_name">Log out</span>
-          </a>
-        </li>
-      </ul>
-    </div>
+    <div id="sidebarContainer"></div>
     <section class="home-section">
       <nav>
         <div class="sidebar-button">
@@ -237,6 +175,7 @@
     </section>
     <script src="/socket.io/socket.io.js"></script>
     <script src="../js/index.js" type="module"></script>
+    <script src="../js/sidebar.js"></script>
     <script src="../js/employeeProfile.js" type="module"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
   </body>

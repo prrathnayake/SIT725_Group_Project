@@ -1,6 +1,3 @@
-import { connectSocketIo } from "./clientSocket.js";
-connectSocketIo();
-
 async function fetchEmployeeDetails() {
   try {
     const data = getCookie("user_principal");
@@ -97,7 +94,11 @@ document
     }
   });
 
-document.getElementById("editButton").addEventListener("click", editProfile);
+const editButton = document.getElementById("editButton");
+
+if (editButton) {
+  editButton.addEventListener("click", editProfile);
+}
 fetchEmployeeDetails();
 
 export function getCookie(name) {
