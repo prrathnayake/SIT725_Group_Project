@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Employee management system</title>
-    <link rel="stylesheet" href="../public/css/login.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="../css/login.css"> <!-- Link to your CSS file -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Google Fonts - Roboto -->
 </head>
@@ -19,7 +19,7 @@
                     <h4 class="title titleMainSides text-center mt-4">
                         Login into account
                     </h4>
-                    <form id="loginForm" class="form-box px-3" method="POST">
+                    <form id="loginForm" class="form-box px-3" action="auth/login" method="POST">
                       
                         <div class="form-input">
                             <span><i class="fa fa-envelope-open-text"></i></span>
@@ -50,11 +50,11 @@
         </div>
     </div>
 
-    <!-- <script src="/socket.io/socket.io.js"></script> -->
-    <script src="../public/js/login.js"></script>
-    <!-- <script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/login.js"></script>
+    <script>
       var socket = io();
-    </script> -->
+    </script>
 </body>
 
 </html>
