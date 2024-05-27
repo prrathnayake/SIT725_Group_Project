@@ -41,6 +41,7 @@ function initializeSidebar() {
       document.getElementById("settings-link").style.display = "block";
       document.getElementById("view-payroll-link").style.display = "block";
     } else if (role === "Employee") {
+      document.getElementById("dashboard-link").style.display = "block";
       document.getElementById("view-employee-payroll-link").style.display = "block";
       document.getElementById("employee-profile-link").style.display = "block";
       document.getElementById("view-task-employee-link").style.display = "block";
