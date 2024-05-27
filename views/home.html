@@ -3,185 +3,94 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <title>Employee Dashboard</title>
+    <title> Employee Dashboard  </title>
     <link rel="stylesheet" href="/css/dashboard.css">
     <!-- Boxicons CDN Link -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css'
-      rel='stylesheet'>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-    <div class="sidebar">
-      <div class="logo-details">
-        <i class='bx bxl-c-plus-plus'></i>
-        <span class="logo_name">Employee</span>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div id="sidebarContainer"></div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Dashboard</span>
       </div>
-      <ul class="nav-links">
-        <li>
-          <a href="/home" class="active">
-            <i class='bx bx-grid-alt'></i>
-            <span class="links_name">Dashboard</span>
-          </a>
-        </li>
-        <li>
-          <a href="/views/employeeprofile.html">
-            <i class='bx bx-book-alt'></i>
-            <span class="links_name">Employee Profile</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="dropdown-btn">
-            <i class='bx bx-box'></i>
-            <span class="links_name">Employee Management</span>
-            <i class='bx bx-chevron-down dropdown-icon'></i>
-          </a>
-          <div class="dropdown-menu">
-
-            <a href="/views/employeedetails.html">
-              <i class='bx bx-book-alt'></i>
-              <span class="links_name">Add Employee</span>
-            </a>
-            <a href="/views/updateemployee.html">
-              <i class='bx bx-book-alt'></i>
-              <span class="links_name">Update Employee</span>
-            </a>
-            <a href="/views/viewtable.html">
-              <i class='bx bx-book-alt'></i>
-              <span class="links_name">View Employeese</span>
-            </a>
-
+      <div class="search-box">
+        <input type="text" placeholder="Search...">
+        <i class='bx bx-search'></i>
+      </div>
+    </nav>
+    <div class="home-content">
+      <div class="overview-boxes">
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Total Employee</div>
+            <div class="number">2</div>
           </div>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-book-alt'></i>
-            <span class="links_name">Payroll Management</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-book-alt'></i>
-            <span class="links_name">Task Management</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-book-alt'></i>
-            <span class="links_name">Report</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class='bx bx-cog'></i>
-            <span class="links_name">Setting</span>
-          </a>
-        </li>
-        <li class="log_out">
-          <a href="/login">
-            <i class='bx bx-log-out'></i>
-            <span class="links_name">Log out</span>
-          </a>
-        </li>
-      </ul>
+
+        </div>
+      </div>
+
+      <div class="overview-boxes">
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Update Employee</div>
+            <div class="number">2</div>
+          </div>
+
+        </div>
+      </div>
     </div>
-    <section class="home-section">
-      <nav>
-        <div class="sidebar-button">
-          <i class='bx bx-menu sidebarBtn'></i>
-          <span class="dashboard">Dashboard</span>
+    <div class="content">
+      <div class="widget-box sample-widget">
+        <div class="widget-header">
+          <h2>Employee perfomance</h2>
+          <i class="fa fa-cog"></i>
         </div>
-        <div class="search-box">
-          <input type="text" placeholder="Search...">
-          <i class='bx bx-search'></i>
-        </div>
-      </nav>
-      <div class="home-content">
-        <div class="overview-boxes">
-          <div class="box">
-            <div class="right-side">
-              <div class="box-topic">Total Employee</div>
-              <div class="number">2</div>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="overview-boxes">
-          <div class="box">
-            <div class="right-side">
-              <div class="box-topic">Update Employee</div>
-              <div class="number">2</div>
-            </div>
-
-          </div>
+        <div class="widget-content">
+          <img
+            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/87118/sample-data-1.png" />
         </div>
       </div>
-      <div class="content">
-        <div class="widget-box sample-widget">
-          <div class="widget-header">
-            <h2>Employee perfomance</h2>
-            <i class="fa fa-cog"></i>
-          </div>
-          <div class="widget-content">
-            <img
-              src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/87118/sample-data-1.png" />
-          </div>
+      <div class="widget-box sample-widget">
+        <div class="widget-header">
+          <h2>HR perfomance</h2>
+          <i class="fa fa-cog"></i>
         </div>
-        <div class="widget-box sample-widget">
-          <div class="widget-header">
-            <h2>HR perfomance</h2>
-            <i class="fa fa-cog"></i>
-          </div>
-          <div class="widget-content">
-            <img
-              src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/87118/sample-data-1.png" />
-          </div>
-        </div>
-        <div class="widget-box sample-widget">
-          <div class="widget-header">
-            <h2>Task Performance</h2>
-            <i class="fa fa-cog"></i>
-          </div>
-          <div class="widget-content">
-            <img
-              src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/87118/sample-data-1.png" />
-          </div>
-        </div>
-        <div class="widget-box sample-widget">
-          <div class="widget-header">
-            <h2>Payroll Performance</h2>
-            <i class="fa fa-cog"></i>
-          </div>
-          <div class="widget-content">
-            <img
-              src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/87118/sample-data-1.png" />
-          </div>
+        <div class="widget-content">
+          <img
+            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/87118/sample-data-1.png" />
         </div>
       </div>
-    </section>
-
-    <script>
-    let sidebar = document.querySelector(".sidebar");
-    let sidebarBtn = document.querySelector(".sidebarBtn");
-    sidebarBtn.onclick = function() {
-      sidebar.classList.toggle("active");
-      if(sidebar.classList.contains("active")) {
-        sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
-      } else {
-        sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-      }
-    }
-
-    // Dropdown Menu
-    let dropdownBtns = document.querySelectorAll('.dropdown-btn');
-    dropdownBtns.forEach(btn => {
-      btn.addEventListener('click', function() {
-        let dropdownMenu = this.nextElementSibling;
-        dropdownMenu.classList.toggle('active');
-        let dropdownIcon = this.querySelector('.dropdown-icon');
-        dropdownIcon.classList.toggle('bx-chevron-up');
-      });
-    });
-  </script>
-  </body>
+      <div class="widget-box sample-widget">
+        <div class="widget-header">
+          <h2>Task Performance</h2>
+          <i class="fa fa-cog"></i>
+        </div>
+        <div class="widget-content">
+          <img
+            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/87118/sample-data-1.png" />
+        </div>
+      </div>
+      <div class="widget-box sample-widget">
+        <div class="widget-header">
+          <h2>Payroll Performance</h2>
+          <i class="fa fa-cog"></i>
+        </div>
+        <div class="widget-content">
+          <img
+            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/87118/sample-data-1.png" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="/socket.io/socket.io.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+ <script src="../js/index.js" type="module"></script>
+ <script src="../js/sidebar.js"></script>
+<script src="../js/home.js" type="module"></script
+</body>
 </html>
