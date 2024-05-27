@@ -91,8 +91,8 @@
   background: #fff;
   display: flex;
   align-items: center;
-  position: static;
-  width: calc(100%);
+  position: fixed;
+  width: calc(100% - 240px);
   left: 240px;
   z-index: 100;
   padding: 0 20px;
@@ -436,4 +436,72 @@ nav .profile-details i{
     left: 60px;
     width: calc(100% - 60px);
   }
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color:#0A2558;
+  min-width: 150px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-menu.active {
+  display: block;
+}
+.content {
+  float: left;
+  background: #E9EEF4;
+  width: 100%;
+  height: calc(100% - 64px);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.content-header {
+  background: #fff;
+  float: left;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ccc;
+}
+.content-header h1 {
+  margin: 0;
+  font-weight: normal;
+  padding-bottom: 5px;
+}
+.content-header p {
+  margin: 0;
+  padding-left: 2px;
+}
+.widget-box {
+  background: #fff;
+  border: 1px solid #E0E0E0;
+  float: left;
+  width: 100%;
+  margin: 0 0 15px 15px;
+}
+.widget-header {
+  background: #279BE4;
+}
+.widget-header h2 {
+  font-size: 15px;
+  font-weight: normal;
+  margin: 0;
+  padding: 11px 15px;
+  color: #F9F9F9;
+  display: inline-block;
+}
+.sample-widget {
+  max-width: 47%;
+}
+.widget-box .fa-cog {
+  float: right;
+  color: #fff;
+  margin: 11px 11px 0 0;
+  font-size: 20px;
 }
