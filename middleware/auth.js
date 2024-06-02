@@ -10,7 +10,7 @@ const authenticate = async (req, res, next) => {
     const token = await getLocalStorage(LocalStorage_JWT_Token);
     const valideToken = await validateToken(token);
     if (!valideToken) {
-      // return res.status(404).json({ message: "Employee not found" });c
+      // return res.status(404).json({ message: "Employee not found" });
       return res.redirect("/login");
     }
     next();
